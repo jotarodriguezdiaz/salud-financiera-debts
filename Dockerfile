@@ -11,11 +11,11 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
 # Copiar los archivos csproj y restaurar las dependencias
-COPY ["Debts/Debts.csproj", "Debts.API/"]
+COPY ["Debts/Debts.csproj", "Debts/"]
 COPY ["Debts.Application/Debts.Application.csproj", "Debts.Application/"]
 COPY ["Debts.Domain/Debts.Domain.csproj", "Debts.Domain/"]
 COPY ["Debts.Infrastructure/Debts.Infrastructure.csproj", "Debts.Infrastructure/"]
-RUN dotnet restore "Debts.API/Debts.API.csproj"
+RUN dotnet restore "Debts/Debts.csproj"
 
 # Copiar todo el código fuente y construir la aplicación
 COPY . .

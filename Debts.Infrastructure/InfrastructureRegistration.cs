@@ -12,12 +12,14 @@ namespace Debts.Infrastructure
     public static class InfrastructureRegistration
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
-        {   
-            var stringConnection = configuration.GetConnectionString("ConnectionString") ?? string.Empty;            
+        {
+            var stringConnection = configuration.GetConnectionString("ConnectionString") ?? string.Empty;
 
             services.AddDbContext<DebtsContext>(options => options.UseMySQL(stringConnection));
 
-            services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));          
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
+            services.AddScoped<ISimulationRepository, SimulationRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

@@ -37,6 +37,7 @@ namespace Debts.Infrastructure.Persistence
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Simulation> Simulations{ get; set; }
 
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

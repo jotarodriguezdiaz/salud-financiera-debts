@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Debts.Domain\Debts.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\SimulatorDebts\Comammds\" />
-  </ItemGroup>
-
 </Project>

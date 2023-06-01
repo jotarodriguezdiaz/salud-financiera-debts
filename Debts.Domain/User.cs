@@ -8,8 +8,8 @@ namespace Debts.Domain
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid UserId { get; set; } 
-        
-        //public ICollection<Board>? Boards { get; set; }
+        public Guid UserId { get; set; }
+
+        public ICollection<Simulation>? Simulations{ get; set; }
     }
 }

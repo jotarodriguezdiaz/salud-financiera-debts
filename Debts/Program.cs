@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-if (env == "Development")
+if (env == "Development" || env == "Docker")
 {
     // Permite que en desarrolla pueda hacer pruebas directamente sin API.Gateway.
     builder.Services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
